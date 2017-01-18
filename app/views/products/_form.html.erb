@@ -1,0 +1,27 @@
+
+  
+
+<%= form_for(product) do |f| %>
+
+
+  <div class="forum-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="forum-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+<br>
+  <div class="forum-group">
+      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+
+    </div>
+
+  <div class="actions">
+    <%= f.submit "Guardar",  class: 'btn btn-primary' %>
+  </div>
+<% end %>
+ 
+ 
